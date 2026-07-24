@@ -105,7 +105,7 @@
 
     <section class="py-16 px-4 bg-white/40 fade-in-section">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-cursive text-4xl text-pink-600 mb-8">Llevamos amándonos...</h2>
+            <h2 class="font-cursive text-4xl text-pink-600 mb-8">Llevamos oficialmente...</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 <div class="glass-card rounded-2xl p-6">
                     <div id="months" class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">0</div>

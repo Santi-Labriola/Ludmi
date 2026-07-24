@@ -138,8 +138,8 @@
                     <span class="text-pink-500 font-bold text-sm tracking-wide">14 DE MARZO DE 2026</span>
                     <h3 class="text-xl font-semibold text-slate-700 mt-2 mb-4">Así estaba el cielo la noche que tuvimos nuestra primera cita</h3>
                     <!-- SANTI: REEMPLAZA ESTE LINK POR EL NOMBRE DE TU FOTO 1 (ej: src="cielo.jpg") -->
-                    <div class="bg-pink-50 rounded-xl overflow-hidden flex justify-center items-center">
-                        <img src="cielo.jpeg" alt="El cielo de nuestra primera cita" class="w-full h-auto max-h-[70vh] object-contain">
+                    <div class="bg-pink-50/50 rounded-xl flex justify-center items-center p-2">
+                        <img src="cielo.jpeg" alt="El cielo de nuestra primera cita" class="w-full h-auto max-h-[70vh] object-contain rounded-lg">
                     </div>
                 </div>
             </div>
@@ -152,11 +152,11 @@
                     <h3 class="text-xl font-semibold text-slate-700 mt-2 mb-4">Nuestras primeras fotos juntos</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- SANTI: REEMPLAZA ESTOS LINKS POR LOS NOMBRES DE TUS FOTOS -->
-                        <div class="bg-pink-50 rounded-xl overflow-hidden flex justify-center items-center">
-                            <img src="juntos1.jpeg" alt="Nosotros 1" class="w-full h-auto max-h-[50vh] object-contain">
+                        <div class="bg-pink-50/50 rounded-xl flex justify-center items-center p-2">
+                            <img src="juntos1.jpeg" alt="Nosotros 1" class="w-full h-auto max-h-[60vh] object-contain rounded-lg">
                         </div>
-                        <div class="bg-pink-50 rounded-xl overflow-hidden flex justify-center items-center">
-                            <img src="juntos2.jpeg" alt="Nosotros 2" class="w-full h-auto max-h-[50vh] object-contain">
+                        <div class="bg-pink-50/50 rounded-xl flex justify-center items-center p-2">
+                            <img src="juntos2.jpeg" alt="Nosotros 2" class="w-full h-auto max-h-[60vh] object-contain rounded-lg">
                         </div>
                     </div>
                 </div>
@@ -169,8 +169,8 @@
                     <span class="text-pink-500 font-bold text-sm tracking-wide">14 DE MAYO DE 2026</span>
                     <h3 class="text-xl font-semibold text-slate-700 mt-2 mb-4">La primera vez que fui a tu casa</h3>
                     <!-- SANTI: REEMPLAZA ESTE LINK POR EL NOMBRE DE TU FOTO -->
-                    <div class="bg-pink-50 rounded-xl overflow-hidden flex justify-center items-center">
-                        <img src="casa.jpeg" alt="En tu casa" class="w-full h-auto max-h-[70vh] object-contain">
+                    <div class="bg-pink-50/50 rounded-xl flex justify-center items-center p-2">
+                        <img src="casa.jpeg" alt="En tu casa" class="w-full h-auto max-h-[70vh] object-contain rounded-lg">
                     </div>
                 </div>
             </div>
@@ -183,11 +183,11 @@
                     <h3 class="text-xl font-semibold text-slate-700 mt-2 mb-4">Nuestro primer mundial juntos</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- SANTI: REEMPLAZA ESTOS LINKS POR LOS NOMBRES DE TUS FOTOS -->
-                        <div class="bg-pink-50 rounded-xl overflow-hidden flex justify-center items-center">
-                            <img src="mundial1.jpeg" alt="Mundial 1" class="w-full h-auto max-h-[50vh] object-contain">
+                        <div class="bg-pink-50/50 rounded-xl flex justify-center items-center p-2">
+                            <img src="mundial1.jpeg" alt="Mundial 1" class="w-full h-auto object-contain rounded-lg">
                         </div>
-                        <div class="bg-pink-50 rounded-xl overflow-hidden flex justify-center items-center">
-                            <img src="mundial2.jpeg" alt="Mundial 2" class="w-full h-auto max-h-[50vh] object-contain">
+                        <div class="bg-pink-50/50 rounded-xl flex justify-center items-center p-2">
+                            <img src="mundial2.jpeg" alt="Mundial 2" class="w-full h-auto object-contain rounded-lg">
                         </div>
                     </div>
                 </div>

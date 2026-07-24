@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felices 3 meses, amor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf2f8; /* Soft pastel pink */
+            overflow-x: hidden;
+        }
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        /* Floating hearts animation */
+        .heart {
+            position: fixed;
+            top: 100vh;
+            transform: translateY(0);
+            animation: floatUp 15s linear infinite;
+            opacity: 0.4;
+            z-index: -1;
+            font-size: 1.5rem;
+            color: #fbcfe8;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Fade-in scroll effect */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Glassmorphism cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(236, 72, 153, 0.1);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#fce7f3', /* pink-100 */
+                            DEFAULT: '#f472b6', /* pink-400 */
+                            dark: '#be185d', /* pink-700 */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-slate-800 antialiased relative">
+
+    <!-- Decorative Floating Hearts Background -->
+    <div id="hearts-container"></div>
+
+    <header class="min-h-screen flex flex-col items-center justify-center relative px-4 text-center">
+        <div class="absolute inset-0 bg-gradient-to-b from-pink-100 to-pink-50 opacity-50 -z-10"></div>
+        
+        <h1 class="font-cursive text-6xl md:text-8xl text-pink-600 mb-4 drop-shadow-sm animate-pulse">
+            Felices 3 meses, amor
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 mb-12 max-w-2xl font-light">
+            Un pequeño rincón para recordar todo lo hermoso que construimos desde aquel 25 de abril.
+        </p>
+        
+        <div class="animate-bounce mt-10">
+            <svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </header>
+
+    <section class="py-12 px-4 max-w-3xl mx-auto fade-in-section">
+        <div class="glass-card rounded-3xl p-6 text-center">
+            <h2 class="font-cursive text-3xl text-pink-600 mb-4">Nuestra canción</h2>
+            <p class="text-sm text-slate-500 mb-6">Dale play para acompañar la lectura 💖</p>
+            <!-- SANTI: Volvimos al widget de Spotify. Reproducirá 30 seg o la canción entera si ella tiene su sesión abierta. -->
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AL4EamHEBKPpdcFRkYdXN?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-white/40 fade-in-section">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-cursive text-4xl text-pink-600 mb-8">Llevamos amándonos...</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div class="glass-card rounded-2xl p-6">
+                    <div id="months" class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">0</div>
+                    <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Meses</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div id="days" class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">0</div>
+                    <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Días</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div id="hours" class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">0</div>
+                    <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Horas</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div id="minutes" class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">0</div>
+                    <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Minutos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 max-w-3xl mx-auto fade-in-section">
+        <h2 class="font-cursive text-4xl text-center text-pink-600 mb-12">Nuestra Historia</h2>
+        <div class="relative border-l-2 border-pink-300 ml-4 md:ml-8">
+            
+            <!-- Hito 1 -->
+            <div class="mb-12 ml-8 relative">
+                <div class="absolute -left-10 mt-1.5 bg-pink-400 h-4 w-4 rounded-full border-4 border-pink-100"></div>
+                <div class="glass-card rounded-2xl p-5 shadow-sm">
+                    <span class="text-pink-500 font-bold text-sm tracking-wide">14 DE MARZO DE 2026</span>
+                    <h3 class="text-xl font-semibold text-slate-700 mt-2 mb-4">Así estaba el cielo la noche que tuvimos nuestra primera cita</h3>
+                    <!-- SANTI: REEMPLAZA ESTE LINK POR EL NOMBRE DE TU FOTO 1 (ej: src="cielo.jpg") -->
+                    <img src="cielo.jpeg" alt="El cielo de nuestra primera cita" class="rounded-xl w-full object-cover h-64 md:h-80 shadow-inner">
+                </div>
+            </div>
+
+            <!-- Hito 2 -->
+            <div class="mb-12 ml-8 relative">
+                <div class="absolute -left-10 mt-1.5 bg-pink-400 h-4 w-4 rounded-full border-4 border-pink-100"></div>
+                <div class="glass-card rounded-2xl p-5 shadow-sm">
+                    <span class="text-pink-500 font-bold text-sm tracking-wide">3 DE MAYO DE 2026</span>
+                    <h3 class="text-xl font-semibold text-slate-700 mt-2 mb-4">Nuestras primeras fotos juntos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- SANTI: REEMPLAZA ESTOS LINKS POR LOS NOMBRES DE TUS FOTOS -->
+                        <img src="juntos1.jpeg" alt="Nosotros 1" class="rounded-xl w-full object-cover h-64 shadow-inner">
+                        <img src="juntos2.jpeg" alt="Nosotros 2" class="rounded-xl w-full object-cover h-64 shadow-inner">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hito 3 -->
+            <div class="mb-12 ml-8 relative">
+                <div class="absolute -left-10 mt-1.5 bg-pink-400 h-4 w-4 rounded-full border-4 border-pink-100"></div>
+                <div class="glass-card rounded-2xl p-5 shadow-sm">
+                    <span class="text-pink-500 font-bold text-sm tracking-wide">14 DE MAYO DE 2026</span>
+                    <h3 class="text-xl font-semibold text-slate-700 mt-2 mb-4">La primera vez que fui a tu casa</h3>
+                    <!-- SANTI: REEMPLAZA ESTE LINK POR EL NOMBRE DE TU FOTO -->
+                    <img src="casa.jpeg" alt="En tu casa" class="rounded-xl w-full object-cover h-64 md:h-80 shadow-inner">
+                </div>
+            </div>
+
+            <!-- Hito 4 -->
+            <div class="mb-12 ml-8 relative">
+                <div class="absolute -left-10 mt-1.5 bg-pink-400 h-4 w-4 rounded-full border-4 border-pink-100"></div>
+                <div class="glass-card rounded-2xl p-5 shadow-sm">
+                    <span class="text-pink-500 font-bold text-sm tracking-wide">JULIO DE 2026</span>
+                    <h3 class="text-xl font-semibold text-slate-700 mt-2 mb-4">Nuestro primer mundial juntos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- SANTI: REEMPLAZA ESTOS LINKS POR LOS NOMBRES DE TUS FOTOS -->
+                        <img src="mundial1.jpeg" alt="Mundial 1" class="rounded-xl w-full object-cover h-64 shadow-inner">
+                        <img src="mundial2.jpeg" alt="Mundial 2" class="rounded-xl w-full object-cover h-64 shadow-inner">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 px-4 max-w-3xl mx-auto fade-in-section mb-24">
+        <div class="glass-card rounded-3xl p-8 md:p-12 shadow-lg relative">
+            <div class="absolute top-4 left-6 text-pink-200 text-7xl font-serif opacity-40 leading-none">"</div>
+            
+            <h2 class="font-cursive text-4xl text-pink-600 mb-8 text-center relative z-10">Felices 3 meses mi amor!</h2>
+            
+            <div class="text-slate-700 leading-relaxed space-y-5 text-lg relative z-10 font-light">
+                <p>3 meses siendo novios oficialmente, pero mi corazón siente que lleva una vida con vos porque haces que me sienta en casa cuando estamos juntos.</p>
+                
+                <p>Te amo de una manera inexplicable, haces que mi corazón explote de amor porque pienso en vos y hasta una sonrisa se me escapa (sino preguntales a los del gimnasio jaja).</p>
+                
+                <p>Que la vida nos siga llenando de momentos hermosos, desde el más simple como unos mates hasta los más locos (como los que hablamos siempre cuando soñamos juntos).</p>
+                
+                <p>Te amo mi niña hermosa</p>
+            </div>
+            
+            <div class="mt-12 text-right">
+                <p class="font-cursive text-4xl text-pink-500 font-bold">Santi</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // --- 1. CONFIGURACIÓN DEL CONTADOR DE TIEMPO ---
+        // Fecha de inicio: 25 de Abril de 2026 a las 00:00
+        const startDate = new Date('2026-04-25T00:00:00');
+
+        function updateCounter() {
+            const now = new Date();
+            const difference = now - startDate;
+
+            // Cálculos básicos
+            const daysTotal = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / 1000 / 60) % 60);
+            
+            // Cálculo aproximado de meses (promediando 30.44 días por mes)
+            const months = Math.floor(daysTotal / 30.44);
+            const days = Math.floor(daysTotal % 30.44);
+
+            // Actualizar el HTML
+            // Si la fecha actual es anterior al inicio (por si acaso), mostrar 0
+            if (difference < 0) {
+                return; 
+            }
+
+            document.getElementById('months').innerText = months;
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+        }
+
+        // Actualizar el contador cada minuto
+        setInterval(updateCounter, 60000);
+        updateCounter(); // Llamada inicial
+
+
+        // --- 2. GENERADOR DE CORAZONES FLOTANTES ---
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const emojis = ['🤍', '🌸', '✨', '💖'];
+            
+            for(let i = 0; i < 20; i++) {
+                let heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                
+                // Posición aleatoria horizontal
+                heart.style.left = Math.random() * 100 + 'vw';
+                
+                // Retraso aleatorio para que no salgan todos juntos
+                heart.style.animationDelay = Math.random() * 15 + 's';
+                
+                // Duración aleatoria
+                heart.style.animationDuration = (10 + Math.random() * 15) + 's';
+                
+                container.appendChild(heart);
+            }
+        }
+        createHearts();
+
+
+        // --- 3. EFECTO FADE-IN AL HACER SCROLL ---
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+            });
+
+            const hiddenElements = document.querySelectorAll('.fade-in-section');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
